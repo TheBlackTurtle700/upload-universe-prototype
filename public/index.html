@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Universe Prototype</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1 class="title">UPLOAD UNIVERSE — PROTOTYPE</h1>
+
+    <div id="login-screen">
+        <h2>Create or Enter Your Avatar</h2>
+        <input id="avatarName" placeholder="Enter avatar name...">
+        <button onclick="enterWorld()">Enter Universe</button>
+    </div>
+
+    <div id="world" class="hidden">
+        <canvas id="gameCanvas"></canvas>
+
+        <div id="ui">
+            <p id="locationText">Location: Starter City</p>
+
+            <button onclick="goToCity('Starter City')">Starter City</button>
+            <button onclick="goToCity('Uptown District')">Uptown District</button>
+            <button onclick="goToCity('Metro Plaza')">Metro Plaza</button>
+            <button onclick="goToCity('Neon Market')">Neon Market</button>
+
+            <div id="chatBox">
+                <div id="messages"></div>
+                <input id="chatInput" placeholder="Chat..." onkeydown="sendChat(event)">
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
