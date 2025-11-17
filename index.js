@@ -25,10 +25,17 @@ const fs = require("fs");
 //////////////////////////
 
 const app = express();
-app.use(bodyParser.json());
-app.use(express.static("public"));
 
-//////////////////////////
+// Middleware
+app.use(bodyParser.json());
+
+// Serve the frontend correctly
+app.use(express.static(path.join(__dirname, "public")));
+
+// Home route for browser
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});//////////////////////////
 // DIRECTORY SETUP
 //////////////////////////
 
